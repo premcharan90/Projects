@@ -1,0 +1,43 @@
+- <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+- <System>
+  <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}" /> 
+  <EventID>1</EventID> 
+  <Version>5</Version> 
+  <Level>4</Level> 
+  <Task>1</Task> 
+  <Opcode>0</Opcode> 
+  <Keywords>0x8000000000000000</Keywords> 
+  <TimeCreated SystemTime="2026-10-24T09:41:39.7047610Z" /> 
+  <EventRecordID>11504</EventRecordID> 
+  <Correlation /> 
+  <Execution ProcessID="2984" ThreadID="3864" /> 
+  <Channel>Microsoft-Windows-Sysmon/Operational</Channel> 
+  <Computer>Windows10</Computer> 
+  <Security UserID="S-1-5-18" /> 
+  </System>
+- <EventData>
+  <Data Name="RuleName">technique_id=T1204,technique_name=User Execution</Data> 
+  <Data Name="UtcTime">2026-10-24 09:41:39.688</Data> 
+  <Data Name="ProcessGuid">{414959cd-7d53-6adc-0b01-000000000700}</Data> 
+  <Data Name="ProcessId">188</Data> 
+  <Data Name="Image">C:\Windows\System32\cmd.exe</Data> 
+  <Data Name="FileVersion">10.0.19041.3636 (WinBuild.160101.0800)</Data> 
+  <Data Name="Description">Windows Command Processor</Data> 
+  <Data Name="Product">Microsoft® Windows® Operating System</Data> 
+  <Data Name="Company">Microsoft Corporation</Data> 
+  <Data Name="OriginalFileName">Cmd.Exe</Data> 
+  <Data Name="CommandLine">"C:\Windows\system32\cmd.exe"</Data> 
+  <Data Name="CurrentDirectory">C:\Users\admin\</Data> 
+  <Data Name="User">WINDOWS10\admin</Data> 
+  <Data Name="LogonGuid">{414959cd-7d1a-6adc-6a8d-0b0000000000}</Data> 
+  <Data Name="LogonId">0xb8d6a</Data> 
+  <Data Name="TerminalSessionId">1</Data> 
+  <Data Name="IntegrityLevel">Medium</Data> 
+  <Data Name="Hashes">SHA1=E9BE2F86E3A3BFF02D1953AECCF0ED22284596D4,MD5=CB6CD09F6A25744A8FA6E4B3E4D260C5,SHA256=265B69033CEA7A9F8214A34CD9B17912909AF46C7A47395DD7BB893A24507E59,IMPHASH=272245E2988E1E430500B852C4FB5E18</Data> 
+  <Data Name="ParentProcessGuid">{414959cd-7d1b-6adc-8500-000000000700}</Data> 
+  <Data Name="ParentProcessId">5440</Data> 
+  <Data Name="ParentImage">C:\Windows\explorer.exe</Data> 
+  <Data Name="ParentCommandLine">C:\Windows\Explorer.EXE</Data> 
+  <Data Name="ParentUser">WINDOWS10\admin</Data> 
+  </EventData>
+  </Event>

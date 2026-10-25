@@ -1,0 +1,44 @@
+Return-Path: <noreply@corp-itsupport-helpdesk.example>
+Received: from mx.corp.example (mx.corp.example [10.0.0.5])
+	by mailbox.corp.example with ESMTPS; Sun, 25 Oct 2026 08:41:12 +0000
+Received: from mail-relay.bulkmailer.example (unknown [198.51.100.23])
+	by mx.corp.example with ESMTP; Sun, 25 Oct 2026 08:41:09 +0000
+Authentication-Results: mx.corp.example;
+	spf=softfail smtp.mailfrom=corp-itsupport-helpdesk.example;
+	dkim=none;
+	dmarc=fail header.from=corp.example
+From: "IT Helpdesk (corp.example)" <helpdesk@corp-itsupport-helpdesk.example>
+Reply-To: helpdesk.reply@webmail-inbox.example
+To: employee@corp.example
+Subject: Action Required: Your password expires in 24 hours
+Date: Sun, 25 Oct 2026 08:40:55 +0000
+Message-ID: <20261025084055.7731@bulkmailer.example>
+X-Training-Sample: synthetic email for phishing-analysis practice, all domains and IPs are reserved or fictional
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="BOUNDARY-7731"
+
+--BOUNDARY-7731
+Content-Type: text/plain; charset="utf-8"
+
+Dear User,
+
+Your corporate password will expire in 24 hours. To avoid being locked out
+of your account, verify your account immediately:
+
+http://corp-itsupport-helpdesk.example/reset?uid=employee
+
+If you do not act urgently your mailbox will be suspended.
+
+IT Helpdesk
+
+--BOUNDARY-7731
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Dear User,</p>
+<p>Your corporate password will expire in <b>24 hours</b>. Please verify your account immediately to avoid suspension.</p>
+<p><a href="http://corp-itsupport-helpdesk.example/reset?uid=employee">https://sso.corp.example/password-reset</a></p>
+<p>IT Helpdesk</p>
+</body></html>
+
+--BOUNDARY-7731--

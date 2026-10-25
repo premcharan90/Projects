@@ -1,0 +1,22 @@
+=== EXTRACTED IOCs ===
+
+[EMAIL ADDRESSES]
+From: "IT Helpdesk (corp.example)" <helpdesk@corp-itsupport-helpdesk.example>
+Reply-To: helpdesk.reply@webmail-inbox.example
+Return-Path: <noreply@corp-itsupport-helpdesk.example>
+
+[IP ADDRESSES]
+10.0.0.5
+198.51.100.23
+
+[DOMAINS]
+corp-itsupport-helpdesk.example
+webmail-inbox.example
+bulkmailer.example
+
+[URLS]
+http://corp-itsupport-helpdesk.example/reset?uid=employee
+https://sso.corp.example/password-reset
+
+[AUTHENTICATION RESULTS]
+mx.corp.example;	spf=softfail smtp.mailfrom=corp-itsupport-helpdesk.example;	dkim=none;	dmarc=fail header.from=corp.example

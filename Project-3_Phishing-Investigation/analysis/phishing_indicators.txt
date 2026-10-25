@@ -1,0 +1,76 @@
+=== PHISHING INDICATOR ANALYSIS ===
+
+1. SENDER DOMAIN
+From:
+helpdesk@corp-itsupport-helpdesk.example
+
+Observation:
+The sender domain differs from the apparent corporate domain:
+corp.example
+
+Assessment:
+Potential sender-domain impersonation.
+
+2. REPLY-TO MISMATCH
+Reply-To:
+helpdesk.reply@webmail-inbox.example
+
+Observation:
+The Reply-To address uses a different domain from the sender address
+and the apparent corporate domain.
+
+Assessment:
+Potential attempt to redirect replies to a different mailbox.
+
+3. EMAIL AUTHENTICATION
+SPF: softfail
+DKIM: none
+DMARC: fail
+
+Assessment:
+The message did not successfully authenticate as the claimed corporate
+sender.
+
+4. URGENCY
+Subject:
+Action Required: Your password expires in 24 hours
+
+Observation:
+The email creates urgency by warning that the user's mailbox may be
+suspended.
+
+Assessment:
+Urgency and account-lockout pressure are phishing indicators.
+
+5. HYPERLINK MISMATCH
+Visible text:
+https://sso.corp.example/password-reset
+
+Actual destination:
+http://corp-itsupport-helpdesk.example/reset?uid=employee
+
+Observation:
+The visible URL does not match the actual hyperlink destination.
+
+Assessment:
+Potential attempt to make the destination appear more trustworthy.
+
+6. PASSWORD RESET THEME
+Observation:
+The email requests immediate account verification through a password-reset
+link.
+
+Assessment:
+The credential-reset theme is consistent with phishing behavior.
+
+7. OVERALL ASSESSMENT
+The synthetic email contains multiple phishing indicators, including
+sender-domain inconsistency, Reply-To mismatch, failed email authentication,
+urgency, and a visible-link/actual-destination mismatch.
+
+Risk Assessment:
+HIGH within the context of this synthetic phishing-analysis exercise.
+
+Note:
+This is a controlled training sample. No conclusion about real-world
+malicious infrastructure should be made from this sample.

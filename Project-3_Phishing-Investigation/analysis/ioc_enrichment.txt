@@ -1,0 +1,41 @@
+=== IOC ENRICHMENT ===
+
+Sample Type:
+Synthetic phishing email for security-analysis practice.
+
+IP ADDRESS
+198.51.100.23
+Classification: Documentation / TEST-NET-2
+Assessment: Not a real Internet-routable attacker IP.
+Source: IANA IPv4 Special-Purpose Address Registry.
+
+DOMAINS
+corp-itsupport-helpdesk.example
+webmail-inbox.example
+bulkmailer.example
+corp.example
+sso.corp.example
+
+Classification: Documentation / example domain
+Assessment: The .example top-level domain is reserved for documentation and examples.
+Source: IANA Reserved Domains.
+
+URL
+http://corp-itsupport-helpdesk.example/reset?uid=employee
+
+Assessment:
+The URL is part of the synthetic training sample. It uses a documentation domain and
+therefore cannot be treated as a live malicious URL.
+
+SECURITY ASSESSMENT
+No live reputation verdict was assigned to the IP or domains because the sample
+intentionally uses reserved documentation values.
+
+The email remains suspicious based on its internal characteristics:
+- SPF softfail
+- DKIM none
+- DMARC fail
+- Sender domain differs from the apparent corporate identity
+- Reply-To uses a different domain
+- Visible URL differs from the actual hyperlink destination
+- Urgency and account-lockout language

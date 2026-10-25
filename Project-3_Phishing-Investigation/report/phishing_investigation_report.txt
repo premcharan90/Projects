@@ -1,0 +1,195 @@
+============================================================
+PHISHING EMAIL INVESTIGATION REPORT
+============================================================
+
+1. CASE OVERVIEW
+
+Case Type:
+Phishing Email Investigation
+
+Sample Classification:
+Synthetic training sample
+
+Risk Assessment:
+HIGH
+
+Objective:
+Analyze a suspicious email, extract indicators of compromise, evaluate
+email authentication and message characteristics, enrich extracted
+indicators, and map supported behaviors to MITRE ATT&CK.
+
+
+2. EMAIL DETAILS
+
+From:
+helpdesk@corp-itsupport-helpdesk.example
+
+Reply-To:
+helpdesk.reply@webmail-inbox.example
+
+Return-Path:
+noreply@corp-itsupport-helpdesk.example
+
+Recipient:
+employee@corp.example
+
+Subject:
+Action Required: Your password expires in 24 hours
+
+Message-ID:
+<20261025084055.7731@bulkmailer.example>
+
+
+3. EMAIL AUTHENTICATION
+
+SPF:
+softfail
+
+DKIM:
+none
+
+DMARC:
+fail
+
+Assessment:
+The authentication results provide multiple indicators that the message
+did not successfully authenticate as the claimed corporate sender.
+
+
+4. MAIL PATH
+
+Observed source IP:
+198.51.100.23
+
+Observed relay:
+mail-relay.bulkmailer.example
+
+Internal mail server:
+mx.corp.example
+
+Assessment:
+The sample contains a simulated external-to-internal mail path.
+
+
+5. EXTRACTED IOCs
+
+IP:
+198.51.100.23
+
+Domains:
+corp-itsupport-helpdesk.example
+webmail-inbox.example
+bulkmailer.example
+corp.example
+sso.corp.example
+
+URL:
+http://corp-itsupport-helpdesk.example/reset?uid=employee
+
+Email addresses:
+helpdesk@corp-itsupport-helpdesk.example
+helpdesk.reply@webmail-inbox.example
+noreply@corp-itsupport-helpdesk.example
+
+
+6. IOC ENRICHMENT
+
+The extracted IP and domains were identified as reserved documentation
+values within the synthetic training sample.
+
+The IP 198.51.100.23 is a TEST-NET documentation address.
+
+The domains use the .example namespace, which is reserved for
+documentation and examples.
+
+Because the indicators are intentionally non-production values, no
+real-world malicious reputation was assigned to them.
+
+
+7. PHISHING INDICATORS
+
+The investigation identified the following characteristics:
+
+- Sender domain differs from the apparent corporate domain.
+- Reply-To address uses a different domain.
+- SPF authentication resulted in softfail.
+- DKIM authentication was not present.
+- DMARC authentication failed.
+- The message creates urgency around password expiration.
+- The message threatens account or mailbox suspension.
+- The visible URL differs from the actual hyperlink destination.
+- The message uses an account verification/password-reset theme.
+
+
+8. MITRE ATT&CK MAPPING
+
+T1566.002 — Phishing: Spearphishing Link
+
+Evidence:
+The email directs the recipient to an account verification/password-reset
+link.
+
+T1036 — Masquerading
+
+Evidence:
+The sender presents itself as "IT Helpdesk (corp.example)" while using a
+different sender domain.
+
+The following techniques were intentionally not mapped because the sample
+does not provide sufficient evidence:
+
+T1078 — Valid Accounts
+T1056.002 — Input Capture: GUI Input Capture
+
+
+9. ANALYST ASSESSMENT
+
+The email demonstrates multiple characteristics consistent with a phishing
+attempt, including sender impersonation, authentication failures, urgency,
+Reply-To mismatch, and hyperlink destination mismatch.
+
+Within the controlled training scenario, the email is assessed as HIGH risk.
+
+The available evidence supports identifying the message as suspicious;
+however, the synthetic nature of the sample prevents conclusions about
+real-world infrastructure or threat-actor activity.
+
+
+10. RECOMMENDED SOC RESPONSE
+
+If this were observed in a real organization:
+
+1. Quarantine the email.
+2. Identify other recipients of the same message.
+3. Search email telemetry for the sender, Reply-To address, subject, and
+   URL.
+4. Block confirmed malicious indicators after validation.
+5. Check whether any users interacted with the link.
+6. If credentials were submitted, initiate the organization's credential
+   compromise response process.
+7. Document the incident and preserve the original email for further
+   investigation.
+
+
+11. EVIDENCE
+
+01-python-email-header-analysis.png
+02-ioc-extraction.png
+03-ioc-enrichment.png
+04a-phishing-indicator-analysis.png
+04b-phishing-indicator-analysis.png
+05a-mitre-attack-mapping.png
+05b-mitre-attack-mapping.png
+
+Supporting files:
+
+evidence\suspicious_email.eml
+iocs\extracted_iocs.txt
+analysis\ioc_enrichment.txt
+analysis\phishing_indicators.txt
+analysis\mitre_mapping.txt
+
+
+============================================================
+END OF REPORT
+============================================================

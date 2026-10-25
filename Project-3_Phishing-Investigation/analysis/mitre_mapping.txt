@@ -1,0 +1,64 @@
+=== MITRE ATT&CK MAPPING ===
+
+1. T1566.002 — Phishing: Spearphishing Link
+
+Evidence:
+The email contains a hyperlink directing the recipient to an account
+verification/password-reset page.
+
+The visible URL differs from the actual hyperlink destination:
+Visible:
+https://sso.corp.example/password-reset
+
+Actual:
+http://corp-itsupport-helpdesk.example/reset?uid=employee
+
+Assessment:
+The email uses a link as the mechanism for directing the recipient to
+the requested verification action.
+
+2. T1036 — Masquerading
+
+Evidence:
+The sender identifies itself as:
+"IT Helpdesk (corp.example)"
+
+However, the actual sender address uses:
+corp-itsupport-helpdesk.example
+
+Assessment:
+The sender identity is designed to appear associated with the corporate
+IT Helpdesk despite using a different domain.
+
+3. T1078 — Valid Accounts
+
+Assessment:
+Not mapped.
+
+Reason:
+Although the email attempts to obtain account verification, the sample
+does not provide evidence that valid credentials were obtained or used.
+
+4. T1056.002 — Input Capture: GUI Input Capture
+
+Assessment:
+Not mapped.
+
+Reason:
+The sample contains a password-reset/verification link, but there is no
+evidence showing that credentials were actually captured.
+
+MAPPING SUMMARY
+
+Primary technique:
+T1566.002 — Phishing: Spearphishing Link
+
+Supporting technique:
+T1036 — Masquerading
+
+Techniques intentionally not mapped:
+T1078 — Valid Accounts
+T1056.002 — Input Capture: GUI Input Capture
+
+These were excluded because the available evidence does not demonstrate
+credential acquisition or use.
